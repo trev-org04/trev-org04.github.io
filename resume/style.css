@@ -1,3 +1,141 @@
-.trialdiv {
-    color: #000;
+:root {
+    --background: #181818;
+    --elementColor: #232323;
+    --textColor: #E2E2E2;
+    --qualities: #00B87A;
+    --profile: #FFB200;
+    --contact: #007DFF;
+  }
+html, body  {
+	margin: 0;
+    padding: 0;
+    background-color: var(--background);
+}
+
+/*Header Styling*/
+.name {
+    font-weight: 600;
+    font-size: 40px;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+    padding-left: .64em;
+}
+.title {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+    padding-left: 1.25em;
+    opacity: .75;
+}
+.header {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    background-color: var(--elementColor);
+    position: sticky;
+    border-radius: 0px 0px 16px 16px;
+    width: 100%;
+    max-width: 100%;
+    padding: 1.5em 2.3em 1.5em 1.5em;
+    margin: 0 auto;
+    box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    -ms-box-sizing: border-box;
+}
+.linkcontain, .namecontain  {
+    display: inline-flex;
+    align-items: center;
+}
+.nameandtitlecontain {
+    display: grid;
+}
+.link {
+    font-size: 18px;
+    color: var(--textColor);
+    font-weight: 500;
+    text-decoration: none;
+    padding: 2.5px 15px;
+    margin-left: 10px;
+    border-radius: 7px;
+    font-family: 'Poppins', sans-serif;
+    transition: all .2s ease-out;
+}
+.link:hover {
+    color: var(--elementColor);
+}
+.aboutlink:hover {
+    background-color: var(--contact);
+}
+.profilepic {
+    width: 75px;
+    height: 75px;
+    border-radius: 15px;
+    margin-left: .6em;
+}
+
+/*Inline Card Styling*/
+.cardcontain {
+    display: inline-flex;
+}
+
+/*General Card Styling*/
+.profile, .qualities {
+    background-color: var(--elementColor);
+    padding-bottom: 1em;
+    display: table;
+    margin: auto;
+    border-radius: 10px;
+}
+.qualitiesheader, .profileheader {
+    width: -moz-available;
+    width: -webkit-fill-available; 
+    width: fill-available;
+    border-radius: 10px;
+    display: inline-flex;
+    padding: .75em;
+    align-items: center;
+    justify-content: center;
+}
+.profileicon, .qualitiesicon {
+    color: var(--elementColor);
+    height: 27px;
+    width: 27px;
+    transform: rotate(0deg) !important;
+    vertical-align: 0em !important;
+}
+.profiletitle, .qualitiestitle {
+    color: var(--elementColor);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    font-size: 25px;
+    padding-left: .5em;
+}
+.profilecontenttext, .qualitiescontenttext {
+    color: var(--textColor);
+    font-size: 15px;
+    opacity: .75;
+    font-weight: 400;
+    font-family: 'Poppins', sans-serif;
+}
+.profilecontent, .qualitiescontent {
+    text-align: center;
+    padding: 1em;
+}
+
+/*Profile Card Styling*/
+.profile {
+    width: 55%;
+}
+.profileheader {
+    background-color: var(--profile);
+}
+
+/*Qualtities Card Styling*/
+.qualities {
+    width: 35%;
+}
+.qualitiesheader {
+    background-color: var(--qualities);
 }
