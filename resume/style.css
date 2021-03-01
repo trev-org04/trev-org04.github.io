@@ -4,12 +4,68 @@
     --textColor: #E2E2E2;
     --qualities: #00B87A;
     --profile: #FFB200;
-    --contact: #007DFF;
+    --work: #E8315F;
+    --contact: #00C4FF;
+    --education: #524FFE;
+    --projects: #BE74D7;
   }
 html, body  {
 	margin: 0;
     padding: 0;
     background-color: var(--background);
+}
+
+/*In Progress Popup Styling*/
+.inprogresscontain  {
+    background-color: var(--elementColor);
+    box-shadow: 2px 2px 5px;
+    padding: 1.5em 2em;
+    z-index: 999;
+    position: fixed;
+    bottom: 10px;
+    left: 10px;
+    border-radius: 15px;
+}
+.inprogresstextcontain {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+}
+.inprogresstitle {
+    font-weight: 500;
+    font-size: 20px;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: .25em;
+}
+.inprogresscontent {
+    font-weight: 400;
+    font-size: 15px;
+    opacity: .75;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+    margin-bottom: .75em;
+}
+.inprogressbuttoncontain {
+    padding-left: 13em;
+    flex-direction: row;
+    display: flex;
+    justify-content: center;
+}
+.inprogressbutton {
+    padding: 5px 10px;
+    background-color: var(--contact);
+    color: var(--elementColor);
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-size: 14px;
+    border-radius: 6px;
+    margin-top: .5em;
+    border: none;
+}
+.inprogressbutton:focus {
+    border: none;
+    outline: none;
 }
 
 /*Header Styling*/
@@ -18,24 +74,25 @@ html, body  {
     font-size: 40px;
     color: var(--textColor);
     font-family: 'Poppins', sans-serif;
-    padding-left: .64em;
+    margin-left: .33em;
 }
 .title {
-    font-weight: 500;
+    font-weight: 300;
     font-size: 20px;
     color: var(--textColor);
     font-family: 'Poppins', sans-serif;
-    padding-left: 1.25em;
     opacity: .75;
+    margin-left: .64em;
 }
 .header {
     display: flex;
     flex-direction: row;
     justify-content: space-between;
-    background-color: var(--elementColor);
-    position: sticky;
-    border-radius: 0px 0px 16px 16px;
+    position: fixed;
+    top: 0;
+    z-index: 5;
     width: 100%;
+    background-color: var(--elementColor);
     max-width: 100%;
     padding: 1.5em 2.3em 1.5em 1.5em;
     margin: 0 auto;
@@ -44,11 +101,11 @@ html, body  {
     -webkit-box-sizing: border-box;
     -ms-box-sizing: border-box;
 }
-.linkcontain, .namecontain  {
+.linkcontain  {
     display: inline-flex;
     align-items: center;
 }
-.nameandtitlecontain {
+.namecontain {
     display: grid;
 }
 .link {
@@ -56,21 +113,64 @@ html, body  {
     color: var(--textColor);
     font-weight: 500;
     text-decoration: none;
+    position: relative;
     padding: 2.5px 15px;
     margin-left: 10px;
     border-radius: 7px;
     font-family: 'Poppins', sans-serif;
-    transition: all .2s ease-out;
+    display: inline-block;
 }
-.link:hover {
-    color: var(--elementColor);
+.link:before {
+    content: '';
+    width: 0px;
+    height: 3px;
+    position: absolute;
+    left: 0px;
+    bottom: 0px;
+    -webkit-transition: all 0.3s ease-out;
+    transition: all 0.3s ease-out;
 }
-.aboutlink:hover {
+.aboutlink:before {
+    background-color: var(--profile);
+}
+.contactlink:before {
     background-color: var(--contact);
 }
-.profilepic {
-    width: 75px;
-    height: 75px;
+.projectslink:before {
+    background-color: var(--projects);
+}
+.aboutlink:hover:before, .contactlink:hover:before, .projectslink:hover:before {
+    width: 100%;
+}
+
+/*About Section Styling*/
+.abouttitle {
+    font-weight: 500;
+    font-size: 30px;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+}
+.aboutcontent {
+    font-weight: 400;
+    font-size: 18px;
+    opacity: .75;
+    color: var(--textColor);
+    font-family: 'Poppins', sans-serif;
+}
+.abouttextcontain  {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 45%;
+}
+.aboutcontain  {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    padding-top: 9em;
+}
+.aboutimage {
+    width: 130px;
     border-radius: 15px;
     margin-left: .6em;
 }
@@ -78,17 +178,18 @@ html, body  {
 /*Inline Card Styling*/
 .cardcontain {
     display: inline-flex;
+    padding: 2em 0em;
 }
 
 /*General Card Styling*/
-.profile, .qualities {
+.profile, .qualities, .work, .education {
     background-color: var(--elementColor);
     padding-bottom: 1em;
     display: table;
     margin: auto;
-    border-radius: 10px;
+    border-radius: 15px;
 }
-.qualitiesheader, .profileheader {
+.qualitiesheader, .profileheader, .workheader, .educationheader {
     width: -moz-available;
     width: -webkit-fill-available; 
     width: fill-available;
@@ -98,28 +199,28 @@ html, body  {
     align-items: center;
     justify-content: center;
 }
-.profileicon, .qualitiesicon {
+.profileicon, .qualitiesicon, .workicon, .educationicon {
     color: var(--elementColor);
     height: 27px;
     width: 27px;
     transform: rotate(0deg) !important;
     vertical-align: 0em !important;
 }
-.profiletitle, .qualitiestitle {
+.profiletitle, .qualitiestitle, .worktitle, .educationtitle {
     color: var(--elementColor);
     font-family: 'Poppins', sans-serif;
-    font-weight: 500;
+    font-weight: 600;
     font-size: 25px;
     padding-left: .5em;
 }
-.profilecontenttext, .qualitiescontenttext {
+.profilecontenttext, .qualitiescontenttext, .workcontenttext, .educationcontenttext {
     color: var(--textColor);
     font-size: 15px;
     opacity: .75;
-    font-weight: 400;
+    font-weight: 300;
     font-family: 'Poppins', sans-serif;
 }
-.profilecontent, .qualitiescontent {
+.profilecontent, .qualitiescontent, .workcontent, .educationcontent {
     text-align: center;
     padding: 1em;
 }
@@ -138,4 +239,43 @@ html, body  {
 }
 .qualitiesheader {
     background-color: var(--qualities);
+}
+
+/*Work Card Styling*/
+.work {
+    width: 95%;
+    margin-bottom: 2em;
+}
+.workheader {
+    background-color: var(--work);
+}
+.workcontenttitletext {
+    color: var(--textColor);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+
+/*Education Card Styling*/
+.education {
+    width: 95%;
+    margin-bottom: 2em;
+}
+.educationheader {
+    background-color: var(--education);
+}
+.educationcontenttitletext {
+    color: var(--textColor);
+    font-size: 18px;
+    font-weight: 500;
+    font-family: 'Poppins', sans-serif;
+}
+.educationcontent {
+    width: 40%;
+    padding: 2em 5em .5em 5em;
+}
+.educationinlinecontent {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
 }

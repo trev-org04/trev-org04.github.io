@@ -3,46 +3,104 @@
     <head>
         <!--Created by Trevor Gerald-->
         <link rel="stylesheet" href="./style.css">
-        <link rel="icon" type="image/jpg" href="profile.png">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" type="image/jpg" href="profile.jpg">
+        <title>Trevor Gerald | Resume</title>
         <link rel="preconnect" href="https://fonts.gstatic.com">
-        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+        <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
         <script src="https://code.iconify.design/1/1.0.7/iconify.min.js"></script>
     </head>
-    <body>
+    <header>
         <div class="header">
             <div class="namecontain">
-                <img class="profilepic" src="profile.png">
-                <div class="nameandtitlecontain">
-                    <span class="name">TREVOR GERALD</span>
-                    <span class="title">SOFTWARE DEVELOPER AND GRAPHIC DESIGNER</span>
-                </div>
+                <span class="name">TREVOR GERALD</span>
             </div>
             <div class="linkcontain">
                 <a href="#" class="link aboutlink">About</a>
                 <a href="#" class="link contactlink">Contact</a>
                 <a href="#" class="link projectslink">Projects</a>
-                <a href="#" class="link projectslink">Jelo</a>
+            </div>
+        </div>
+    </header>
+    <body>
+        <div class="aboutcontain">
+            <div class="aboutimagecontain">
+                <img class="aboutimage" src="profile.jpg">
+            </div>
+            <div class="abouttextcontain">
+                <span class="abouttitle">ABOUT ME</span>
+                <span class="aboutcontent">Hello! My name is Trevor Gerald and I'm a junior at Olentangy High School. I'm extremely passionate about computer science and engineering. I enjoy solving complex problems and creating things.</span>
             </div>
         </div>
         <div class="cardcontain">
             <div class="qualities">
                 <div class="qualitiesheader">
-                    <span class="iconify qualitiesicon" data-icon="mdi-account"></span>
+                    <span class="iconify qualitiesicon" data-icon="mdi-card-account-details"></span>
                     <span class="qualitiestitle">QUALITIES</span>
                 </div>
                 <div class="qualitiescontent">
-                    <span class="qualitiescontenttext">• Dependable<br>• Critical thinker and problem solver<br>• Creative<br>• Strong communication skills<br>• Good time management<br>• Close attention to detail</span>
+                    <span class="qualitiescontenttext">• Critical thinker and problem solver<br>• Strong communication skills<br>• Good time management<br>• Close attention to detail</span>
                 </div>
             </div>
             <div class="profile">
                 <div class="profileheader">
-                    <span class="iconify profileicon" data-icon="mdi-account"></span>
+                    <span class="iconify profileicon" data-icon="mdi-account-box"></span>
                     <span class="profiletitle">PROFILE</span>
                 </div>
                 <div class="profilecontent">
-                    <span class="profilecontenttext">Junior at Olentangy High School and enrolled in the Engineering Pathway at Olentangy Academy (STEM). Versatile skill set with experience in computer science, CAD, engineering, and written and oral communication. Fabricated and managed several projects in a short timeline. Constantly seeking opportunities to utilize my skills.</span>
+                    <span class="profilecontenttext">Junior at Olentangy High School and enrolled in the Engineering Pathway at Olentangy Academy (STEM). Versatile skill set with experience in computer science, CAD, engineering, and written and oral communication. Fabricated and managed several projects in a short timeline. Constantly seeking opportunities to apply my skills to.</span>
                 </div>
             </div>
         </div>
+        <div class="work">
+            <div class="workheader">
+                <span class="iconify workicon" data-icon="mdi-briefcase-variant"></span>
+                <span class="worktitle">WORK EXPERIENCE</span>
+            </div>
+            <div class="workcontent">
+                <span class="workcontenttitletext">Mark Latham Coaching Clinics</span><br>
+                <br>
+                <span class="workcontenttext">August 2019 - September 2019, September 2020 - October 2020</span><br>
+                <br>
+                <span class="workcontenttext">• Oversaw eighty five kids during the middle school tennis season<br>• Learned how to manage kids<br>• Devised new methods to train kids for matches</span>
+            </div>
+        </div>
+        <div class="education">
+            <div class="educationheader">
+                <span class="iconify educationicon" data-icon="mdi-school"></span>
+                <span class="educationtitle">EDUCATION</span>
+            </div>
+            <div class="educationinlinecontent">
+                <div class="educationcontent">
+                    <span class="educationcontenttitletext">Olentangy High School</span><br>
+                    <br>
+                    <span class="educationcontenttext">Class of 2022</span><br>
+                    <br>
+                    <span class="educationcontenttext">• GPA (weighted / unweighted): 4.222 / 4.000<br>• Enrolled in AP Calculus, AP Chemistry, and AP Computer Science Principles<br>• 2nd singles on the varsity tennis team<br>• Completed HIST 1152 and POLS 1100 through the College Credit Plus program</span>
+                </div>
+                <div class="educationcontent">
+                    <span class="educationcontenttitletext">Olentangy STEM Academy</span><br>
+                    <br>
+                    <span class="educationcontenttext">Engineering Pathway</span><br>
+                    <br>
+                    <span class="educationcontenttext">• Promotes learning through activities that are hands-on, relevant to local and global issues, and presented in an integrated transdisciplinary approach<br>• Taught how to how to be innovative, think like an engineer, solve real-world problems, conduct relevant research, and work with professionals in a variety of STEM fields</span>
+                </div>
+            </div>
+        </div>
+        <div class="inprogresscontain" id="popup">
+            <div class="inprogresstextcontain">
+                <span class="inprogresstitle">Welcome!</span>
+                <span class="inprogresscontent">This website is still under development.</span>
+            </div>
+            <div class="inprogressbuttoncontain">
+                <button onClick="dismissPopup()" class="inprogressbutton">Dismiss</button>
+            </div>
+        </div>
+        <script>
+            function dismissPopup() {
+              var inProgressPopup = document.getElementById("popup");
+              inProgressPopup.style.display = "none";
+            }
+        </script>
     </body>
 </html>
